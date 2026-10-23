@@ -1,0 +1,71 @@
+{
+  "SchemaVersion": 2,
+  "Repository": "GTFO-C-Foam-Gun-Enhancements",
+  "Files": [
+    {
+      "Path": ".gitattributes",
+      "SHA256": "705FD4D6451A31D36B3DF7DE96F83F30AC976C9B4A6D1E51671D8E2F33E2D0DA",
+      "Bytes": 8
+    },
+    {
+      "Path": ".gitignore",
+      "SHA256": "9E6206F653FF3BC2FD319789B5CF5A21B6316588A00BD2C24540A344A9EAE8A0",
+      "Bytes": 228
+    },
+    {
+      "Path": "Build.ps1",
+      "SHA256": "14B9203BDAE137534027F7B31AE623CA577EF29EA0AE6E5B7F983D5E28F60FB6",
+      "Bytes": 491
+    },
+    {
+      "Path": "DEVELOPMENT.md",
+      "SHA256": "414F288179BD15AE4DBBC0003C10BA6D36BFA52A2721827024FE2B87B0F6C3AC",
+      "Bytes": 2300
+    },
+    {
+      "Path": "NOTICE.md",
+      "SHA256": "B3DABBAE8C70FDB1F476586F6532586765984C1953F8B73A9FF2E6448A403832",
+      "Bytes": 389
+    },
+    {
+      "Path": "README.md",
+      "SHA256": "D8B78C226999A82302B48C54414A402CC60F2F3621B1425F7EFC4FB50B7D8A7B",
+      "Bytes": 958
+    },
+    {
+      "Path": "repo.json",
+      "SHA256": "5A5B9948523F239FA7B8C935E2DCEDF957393CE591AA692C358A9E356A499664",
+      "Bytes": 384
+    },
+    {
+      "Path": "src/FoamGunCustom/AssemblyInfo.cs",
+      "SHA256": "8BAE6A11C3EB82606AE0AA2D141CC1C69EB0F12D37B3C1CED6F75787687FFEFB",
+      "Bytes": 107
+    },
+    {
+      "Path": "src/FoamGunCustom/Plugin.cs",
+      "SHA256": "A57CAE17946C7591CDFDEC52AD82FD3879FE197B80559276239E58C1480FB9B3",
+      "Bytes": 10610
+    },
+    {
+      "Path": "src/FoamGunCustom/ShotScheduler.cs",
+      "SHA256": "B311491F840D221C82072EE29267F12512568BA79165B8129FE69B8AF6A29707",
+      "Bytes": 1556
+    },
+    {
+      "Path": "Test.ps1",
+      "SHA256": "14CBCAC1AC7099963F1CD5856DDF4DBD7BC8DD5133581B6B8C2361521CC05C42",
+      "Bytes": 308
+    },
+    {
+      "Path": "tests/Program.cs",
+      "SHA256": "DD2431A664AB12B05802314663A49855FF8A3E685C06FD624013FC1CDD8A5ECD",
+      "Bytes": 4065
+    },
+    {
+      "Path": "tests/recipes.json",
+      "SHA256": "84AD0C94B44DC4ACE6AE3EA980AADC387B1EC5B0D9033659B1EE819C703C1706",
+      "Bytes": 138
+    }
+  ]
+}

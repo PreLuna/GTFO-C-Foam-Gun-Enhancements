@@ -1,0 +1,16 @@
+{
+  "SchemaVersion": 2,
+  "Repository": "GTFO-C-Foam-Gun-Enhancements",
+  "Modules": [
+    {
+      "Id": "FoamGunCustom",
+      "Assembly": "PreLuna.FoamGunCustom",
+      "Guid": "PreLuna.FoamGunCustom",
+      "Version": "1.0.1",
+      "DependencyGuids": [],
+      "CompileDependencies": [],
+      "Kind": "managed-migrated",
+      "LegacyGuid": "wanglocal.foamguncustom"
+    }
+  ]
+}
