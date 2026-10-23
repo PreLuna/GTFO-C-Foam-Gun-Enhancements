@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 3,
   "Repository": "GTFO-C-Foam-Gun-Enhancements",
   "Modules": [
     {
@@ -10,7 +10,17 @@
       "DependencyGuids": [],
       "CompileDependencies": [],
       "Kind": "managed-migrated",
-      "LegacyGuid": "wanglocal.foamguncustom"
+      "LegacyGuid": "wanglocal.foamguncustom",
+      "ModuleRoot": "FoamGunCustom",
+      "SourceRoot": "FoamGunCustom/src",
+      "Name": "泡沫枪增强",
+      "DependencyDetails": [],
+      "TestsRoot": "FoamGunCustom/tests"
     }
-  ]
+  ],
+  "InputRoots": [
+    "FoamGunCustom",
+    "IntegrationTests"
+  ],
+  "TestPlanPath": "IntegrationTests/recipes.json"
 }

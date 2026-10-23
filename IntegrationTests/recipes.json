@@ -1,0 +1,9 @@
+[
+  {
+    "Name": "FoamSchedulerTests",
+    "Sources": [
+      "FoamGunCustom/src/ShotScheduler.cs",
+      "FoamGunCustom/tests/Program.cs"
+    ]
+  }
+]

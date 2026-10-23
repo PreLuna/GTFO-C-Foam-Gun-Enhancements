@@ -1,16 +1,19 @@
 # GTFO-C-Foam-Gun-Enhancements
 
-C-Foam gun behavior and configuration enhancements for GTFO. 泡沫枪行为与配置改造。
+泡沫枪。各MOD的维护文件直接放在自己的目录内。
 
-| 模组 | 版本 | 维护输入 |
-| --- | --- | --- |
-| FoamGunCustom | 1.0.1 | 源码＋身份迁移 |
+| MOD／目录 | 版本 | 维护方式 | 必要前置／声明版本 | 可选联动／软依赖 |
+| --- | --- | --- | --- | --- |
+| [泡沫枪增强](FoamGunCustom/) | 1.0.1 | 源码＋身份迁移 | 无插件硬前置声明 | 无插件软依赖声明 |
 
-## 下载和安装
+所有插件均需GTFO与相应BepInEx IL2CPP环境。无插件硬依赖声明不表示可脱离游戏运行；软依赖也可能对应某项功能的启用条件。版本列保留加载器声明表达式。
 
-普通玩家请在 [Releases](https://github.com/PreLuna/GTFO-C-Foam-Gun-Enhancements/releases) 下载安装 ZIP；首次发布前该页面没有安装包。GitHub 的 Source code ZIP 用于开发。
-退出游戏后，将安装 ZIP 中的 `BepInEx` 合并到已安装 BepInEx IL2CPP 的 GTFO 游戏目录。替换同功能旧版本，避免同时加载两个版本。个人配置不包含在安装包中。
+## MOD之间的关系
 
-本仓库的运行前置见 [repo.json](repo.json) 中各模组的 `DependencyGuids`；外部前置须自行安装。同仓收纳表示共同维护，具体依赖以该清单为准。
+泡沫枪为独立MOD，无同仓其他MOD依赖。源码、调度测试集中在FoamGunCustom内，共用身份迁移工具位于工具仓。
 
-开发、同仓关联和跨仓联动见 [DEVELOPMENT.md](DEVELOPMENT.md)，来源见 [NOTICE.md](NOTICE.md)。
+## 下载与安装
+
+普通玩家从 [Releases](https://github.com/PreLuna/GTFO-C-Foam-Gun-Enhancements/releases) 下载安装ZIP，退出游戏后将BepInEx合并到已配置前置的游戏目录，替换同功能旧版以免重复加载。个人配置不包含在安装包中。Source code ZIP用于开发。已发布标签固定对应原提交；本地目录整理不覆盖旧安装包。
+
+构建、测试及修改入口见 [DEVELOPMENT.md](DEVELOPMENT.md)，来源见 [NOTICE.md](NOTICE.md)，机器可读路径和依赖见 [repo.json](repo.json)。
