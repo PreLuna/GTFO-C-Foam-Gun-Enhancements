@@ -6,7 +6,7 @@
       "Id": "FoamGunCustom",
       "Assembly": "PreLuna.FoamGunCustom",
       "Guid": "PreLuna.FoamGunCustom",
-      "Version": "1.0.1",
+      "Version": "1.0.2",
       "DependencyGuids": [],
       "CompileDependencies": [],
       "Kind": "managed-migrated",

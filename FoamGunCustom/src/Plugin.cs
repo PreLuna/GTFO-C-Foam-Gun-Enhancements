@@ -7,12 +7,13 @@ using BepInEx.Unity.IL2CPP;
 using HarmonyLib;
 using Player;
 using UnityEngine;
+using PreLuna.FoamGunCustom.Control;
 
 namespace PreLuna.FoamGunCustom;
 
 
 [BepInIncompatibility("local.betterfoamgun")]
-[BepInPlugin(Id, "PreLuna FoamGunCustom", "1.0.1")]
+[BepInPlugin(Id, "PreLuna FoamGunCustom", "1.0.2")]
 public sealed class Plugin : BasePlugin
 {
     public const string Id = "PreLuna.FoamGunCustom";
@@ -23,6 +24,8 @@ public sealed class Plugin : BasePlugin
     internal static ConfigEntry<float> PelletSpread = null!;
     internal static ConfigEntry<float> AmmoCost = null!;
     private Harmony? _harmony;
+    internal FoamGunControlState ControlState;
+    readonly object controlGate = new object();
 
     public override void Load()
     {
@@ -52,6 +55,55 @@ public sealed class Plugin : BasePlugin
             _harmony.UnpatchSelf();
             throw;
         }
+    }
+
+    internal FoamGunControlState EnsureControlState()
+    {
+        lock (controlGate)
+        {
+            if (ControlState == null)
+            {
+                ControlState = new FoamGunControlState(Config.ConfigFilePath, ReadControl, WriteControl, SerializeControl);
+                Config.SaveOnConfigSet = false;
+            }
+            return ControlState;
+        }
+    }
+
+    internal static FoamGunControlValue ReadControl(string key)
+    {
+        switch (key)
+        {
+            case "enabled": return FoamGunControlValue.Boolean(Enabled.Value);
+            case "shotInterval": return FoamGunControlValue.Number(ShotInterval.Value);
+            case "launchForce": return FoamGunControlValue.Number(LaunchForce.Value);
+            case "pelletSpread": return FoamGunControlValue.Number(PelletSpread.Value);
+            case "ammoCost": return FoamGunControlValue.Number(AmmoCost.Value);
+            default: return null;
+        }
+    }
+
+    internal static void WriteControl(string key, FoamGunControlValue value)
+    {
+        if (value == null) return;
+        if (key == "enabled" && value.TryGetBoolean(out var enabled)) { Enabled.Value = enabled; return; }
+        if (!value.TryGetNumber(out var number)) return;
+        switch (key)
+        {
+            case "shotInterval": ShotInterval.Value = (float)number; break;
+            case "launchForce": LaunchForce.Value = (float)number; break;
+            case "pelletSpread": PelletSpread.Value = (float)number; break;
+            case "ammoCost": AmmoCost.Value = (float)number; break;
+        }
+    }
+
+    internal static string SerializeControl(string key)
+    {
+        var value = ReadControl(key);
+        if (value == null) return null;
+        if (value.TryGetBoolean(out var boolean)) return boolean ? "true" : "false";
+        if (value.TryGetNumber(out var number)) return number.ToString("0.###", System.Globalization.CultureInfo.InvariantCulture);
+        return null;
     }
 
     public override bool Unload()

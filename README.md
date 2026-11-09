@@ -9,7 +9,7 @@
 
 | 功能／组件 | 版本 | 修改位置与输入 | 维护方式 | 测试材料 |
 | --- | --- | --- | --- | --- |
-| 泡沫枪增强 `FoamGunCustom` | 1.0.1 | [FoamGunCustom/src](FoamGunCustom/src) | 源码＋身份迁移 | [FoamGunCustom/tests](FoamGunCustom/tests) |
+| 泡沫枪增强 `FoamGunCustom` | 1.0.2（5字段可写） | [FoamGunCustom/src](FoamGunCustom/src) | 源码＋身份迁移 | [FoamGunCustom/tests](FoamGunCustom/tests) |
 
 具体路径、版本、GUID、资源和依赖的机器登记见[repo.json](repo.json)。src是实现，tests是测试；IntegrationTests用于跨MOD场景或调度配方，Shared仅保存真正共享的接口。
 
@@ -20,7 +20,7 @@
 <a id="relations"></a>
 ## 依赖与联动
 
-泡沫枪增强为独立模块，当前没有插件硬前置声明。发射间隔、资源开销与默认配置的变化应一起核对；已有配置与首次安装默认值的处理可能不同。
+泡沫枪增强为独立模块，当前没有插件硬前置声明。1.0.2 新增 `FoamGunControlApi`，经 ModControl 安全行级写入启用/发射间隔/力度/散布/每发资源；启用需重启，其余即时。发射间隔、资源开销与默认配置的变化仍应一起核对。
 
 | 模块 | 插件硬前置／声明版本 | 可选联动／软依赖 |
 | --- | --- | --- |
